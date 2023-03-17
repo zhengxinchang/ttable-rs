@@ -1,4 +1,6 @@
 /test/
 /vendor/
+Makefile
+a
 # Added by cargo
 /target
