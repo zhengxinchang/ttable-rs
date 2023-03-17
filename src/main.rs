@@ -67,7 +67,8 @@ fn main() {
         }
         let mut row = line_vec.iter().map(|x| Cell::new(x)).collect::<Vec<Cell>>();
         if show_row_idx {
-            row.insert(0, Cell::new(&line_num.to_string()));
+            let line_num_decoration = "[".to_string() +line_num.to_string().as_str() + "]";
+            row.insert(0, Cell::new(&line_num_decoration));
         }
         msg_table.add_row(Row::new(row));
     }
@@ -76,11 +77,13 @@ fn main() {
     if show_col_idx {
         if show_row_idx {
             for x in 0..(max_col + 1) {
-                col_title.push(Cell::new(&x.to_string()));
+                let y = "[".to_string() + x.to_string().as_str() + "]";
+                col_title.push(Cell::new(&y.to_string()));
             }
         } else {
             for x in 1..(max_col + 1) {
-                col_title.push(Cell::new(&x.to_string()));
+                let y = "[".to_string() + x.to_string().as_str() + "]";
+                col_title.push(Cell::new(&y.to_string()));
             }
         }
         msg_table.set_titles(Row::new(col_title));
