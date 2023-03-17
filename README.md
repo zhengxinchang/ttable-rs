@@ -6,6 +6,8 @@ A standalone table formatter to view tabular data in console.
 
 ttable is inspired by the excellent Python based tabular viewer [tabview](https://github.com/TabViewer/tabview). ttable implemented the basic function which can read stdin and format it into stdout with formatted table. This small program is useful if you just need a tabular data formatter and do not want to install other prerequisites such as Conda. 
 
+Current version is a basic wrapper of [prettytable-rs](https://github.com/phsym/prettytable-rs).
+
 ## Installation
 
 You just need to download the binary file to your system and make it executable by using `chmod a+x ttable`
@@ -25,5 +27,24 @@ You just need to download the binary file to your system and make it executable 
 
 # Use ttable in pipeline
 <some command> | ttable [options] | <some command>
+
+```
+
+## Output
+
+```bash
+Row Index
+  |
++---+------+--------+-----+
+| 0 | 1    | 2      | 3   | --- Column Index
++===+======+========+=====+
+| 1 | Name | Sex    | Age |
++---+------+--------+-----+
+| 2 | Tom  | Male   | 18  |
++---+------+--------+-----+
+| 3 | Bob  | Male   | 16  |
++---+------+--------+-----+
+| 4 | Zoe  | Female | 23  |
++---+------+--------+-----+
 
 ```
